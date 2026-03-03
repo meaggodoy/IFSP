@@ -1,0 +1,223 @@
+1.
+IPO
+	Entrada: nome
+	Processamento:-
+	Saída: mostrar nome em frase
+
+VAR
+	cadeia nome 
+INÍCIO:
+	escreva("Digite seu nome")
+	leia(nome)
+	escreva("Olá, ", nome, "!")
+FIM
+
+TESTE:
+nome = "João" / Olá, João!
+nome = "Maria" / Olá, Maria!
+
+
+2. 
+IPO
+	Entrada: num1, num2
+	Processamento: soma = num1 + num2
+	Saída: soma
+
+VAR
+	inteiro num1, num2, soma
+INÍCIO:
+	escreva("Digite o número 1: ")
+	leia(num1)
+	escreva("Digite o número 2: ")
+	leia(num2)
+	soma = num1 + num2
+	escreva("A soma é ", soma)
+FIM
+
+TESTE:
+num1 = 2, num2 = 3 / soma == 5
+num1 = 10, num2 = 7 / soma == 17
+
+
+3.
+IPO
+	Entrada: num, i = 0, soma = 0
+	Processamento: media = soma / 3
+	Saída: media
+
+VAR
+	real media, num, soma = 0
+	inteiro i = 0
+INÍCIO:
+	para (i = 0; i < 3; i++)
+		escreva("Digite um número: ")
+		leia(num)
+		soma += num
+	media = soma / 3
+	escreva("A média é: ", media)
+FIM
+
+TESTE:
+num = 1, soma = 1 | num = 2, soma = 3 | num = 3, soma = 6 / media = 2
+num = 2, soma = 2 | num = 10, soma = 12 | num = 3, soma = 15 / media = 5
+
+
+4.
+IPO
+	Entrada: b, h
+	Processamento: area = b * h
+	Saída: area
+
+VAR
+	real b, h, area
+INÍCIO:
+	escreva("Digite a base: ")
+	leia(b)
+	escreva("Digite a altura: ")
+	leia(h)
+	area = b * h
+	escreva("A área do retângulo é: ", area)
+FIM
+
+TESTE:
+b = 5, h = 2 / area = 10
+b = 3, h = 6/ area = 18
+
+
+5.
+IPO
+	Entrada: C (Celsius)
+	Processamento: F = (9/5 * C) + 32
+	Saída: F (Fahrenheint)
+
+VAR
+	real F, C
+INÍCIO:
+	escreva("Digite a temperatura em Celsius: ")
+	leia(C)
+	F = (9/5 * C) + 32
+	ecsreva("A temperatura em Fahrenheint é: ", F)
+FIM
+
+TESTE:
+C = 10 / F = 50
+C = 20 / F = 68
+
+
+6.
+IPO
+	Entrada: num
+	Processamento: num - 1, num + 1
+	Saída: n - 1, n + 1
+
+VAR
+	inteiro num
+INÍCIO:
+	escreva("Digite um número: ")
+	leia(num)
+	escreva("O antecessor é ", num-1, " e o sucessor é ", num+1
+FIM
+
+TESTE:
+num = 1 / 0 e 2
+num = 3 / 2 e 4
+
+
+7.
+IPO
+	Entrada: a, b
+	Processamento: x = a, a = b, b = x
+	Saída: a, b
+
+VAR
+	inteiro a, b, x
+INÍCIO:
+	escreva("Digite o valor de A: ")
+	leia(a)
+	escreva("Digite o valor de B: ")
+	leia(b)
+	x = a
+	a = b
+	b = x
+	escreva("Trocando os valores A: ", a, " e B: ", b)
+FIM
+
+TESTE:
+a = 10, b = 5 / x = 10, a = 5, b = x / a = 5, b = 10
+a = 1, b = 3 / x = 1, a = 3, b = x / a = 3, b = 1
+
+
+8.
+IPO
+	Entrada: segundos
+	Processamento: segundos / 60 = minutos | minutos / 60 = horas | segundos = segundos%60 e minutos = minutos%60
+	Saída: horas, minutos, segundos
+
+VAR
+	inteiro segundos, minutos, horas
+INÍCIO:
+	escreva("Digite os segundos: ")
+	leia(segundos)
+	SE segundos >= 60 ENTÃO:
+		minutos = segundos / 60
+		segundos = segundos%60
+		SE minutos >= 60 ENTÃO:
+			horas = minutos / 60
+			minutos = minutos%60
+			escreva("São ", horas, ":", minutos, ":", segundos)
+		SENÃO
+			escreva("São ", minutos, ":", segundos)
+	SENÃO
+		escreva("São 00:", segundos)
+FIM
+
+TESTE:
+segundos = 59 / segundos = 59, minutos = 0, horas = 0
+segundos = 366 / segundos = 6, minutos = 6, horas = 0
+
+
+9.
+IPO
+	Entrada: salario_base, reajuste
+	Processamento: salario = (1 + reajuste/100) * salario_base
+	Saída: salario
+
+VAR
+	real salario_base, reajuste, salario
+INÍCIO
+	escreva("Digite seu salário base: ")
+	leia(salario_base)
+	escreva("Digite o percentual de ajuste: ")
+	leia(reajuste)
+	salario = (1 + reajuste/100) * salario_base
+	escreva("Seu novo salário é de: ", salario)
+FIM
+
+TESTE:
+salario_base = 1000, reajuste = 10 / salario = 1100
+salario_base = 2000, reajuste = 15 / salario = 2300
+
+
+10.
+IPO
+	Entrada: total, pago
+	Processamento: troco = pago - total
+	Saída: troco
+
+VAR
+	real total, pago, troco
+INÍCIO:
+	escreva("Digite o total da conta: ")
+	leia(total)
+	escreva("Digite o valor pago: ")
+	leia(pago)
+	troco = pago - total
+	SE troco > 0 ENTÃO
+		escreva("Devolva ", troco)
+	SENÃO
+		escreva("Não há troco")
+FIM
+
+TESTE:
+total = 10, pago = 10 / troco = 0
+total = 15, pago = 20 / troco = 5
