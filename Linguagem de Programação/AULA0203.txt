@@ -154,7 +154,7 @@ IPO
 	Saída: horas, minutos, segundos
 
 VAR
-	inteiro segundos, minutos, horas
+	real segundos, minutos, horas
 INÍCIO:
 	escreva("Digite os segundos: ")
 	leia(segundos)
@@ -164,9 +164,9 @@ INÍCIO:
 		SE minutos >= 60 ENTÃO:
 			horas = minutos / 60
 			minutos = minutos%60
-			escreva("São ", horas, ":", minutos, ":", segundos)
+			escreva("São ", horas.arredondar(0), ":", minutos.arredondar(0), ":", segundos)
 		SENÃO
-			escreva("São ", minutos, ":", segundos)
+			escreva("São ", minutos.arredondar(0), ":", segundos)
 	SENÃO
 		escreva("São 00:", segundos)
 FIM
@@ -221,3 +221,4 @@ FIM
 TESTE:
 total = 10, pago = 10 / troco = 0
 total = 15, pago = 20 / troco = 5
+
