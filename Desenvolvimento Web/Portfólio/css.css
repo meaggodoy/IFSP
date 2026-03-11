@@ -158,10 +158,6 @@ section {
     border: #525871 solid 2px;
 }
 
-.img_trabalhos {
-    width: 700px;
-}
-
 #sobre_mim {
     display: flex;
     flex-direction: column;
@@ -253,4 +249,38 @@ section {
     object-position: center;
     border: 2px solid #525871;
     border-radius: 15px;
+}
+
+.github_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 40px;
+}
+
+.cardapio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cardapio_section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cardapio_div {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 2px solid #525871;
+    border-radius: 15px;
+}
+
+.cardapio_div ul {
+    padding: 0 30px;
+    font-family: 'Athena';
+    font-weight: 100;
 }
