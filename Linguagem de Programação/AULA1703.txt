@@ -1,0 +1,156 @@
+1) Ler um número inteiro e informar se ele é positivo, negativo ou zero.
+VARIÁVEIS
+	int num
+INÍCIO
+	escreva("Digite um número: ")
+	leia(num)
+
+	se (num > 0)
+		escreva("Positivo")
+	senão se (num < 0)
+		escreva("Negativo")
+	senão
+		escreva("O número é zero)
+FIM
+
+
+2) Ler a idade de uma pessoa e informar se ela é menor de idade, maior de idade ou idosa (considere
+idosa a partir de 60 anos).
+VARIÁVEIS
+	int idade
+INÍCIO
+	escreva("Digite sua idade: ")
+	leia(idade)
+
+	se (idade >= 18)
+		ecsreva("Maior de idade")
+	senão se (idade >= 60)
+		escreva("Idoso")
+	senão
+		escreva("Menor de idade")
+FIM
+
+
+3) Ler duas notas, calcular a média e informar: “aprovado” se média ≥ 6, senão “reprovado”.
+VARIÁVEIS
+	int nota, media = 0, i, soma = 0
+INÍCIO
+	para (i = 0; i < 2; i++)
+		escreva("Digite uma nota: ")
+		leia(nota)
+
+		soma += nota
+
+	media = soma / 2
+	
+	se (media >= 6)
+		escreva("Aprovado")
+	senão
+		escreva("Reprovado")
+FIM
+
+
+4) Ler o preço de um produto e a quantidade comprada. Calcular o total. Se o total for maior ou igual a
+100, aplicar 10% de desconto. Mostrar total e valor final.
+VARIÁVEIS
+	int prod, compra, total, final
+INÍCIO
+	escreva("Digite o valor do produto: ")
+	leia(prod)
+	escreva("Digite quantos itens foram comprados: ")
+	leia(compra)
+
+	total = prod * compra
+
+	se (total >= 100) 
+		final = 0,9 * total
+	senão
+		final = total
+
+	escreva("O valor final do produto é de ", total, " com pagamento de ", final)
+FIM
+
+
+5) Ler 10 números inteiros usando repetição e contar quantos deles são pares.
+VARIÁVEIS
+	int num, par = 0, i
+INÍCIO
+	para (i = 0; i < 10; i++)
+		escreva("Digite um número: ")
+		leia(num)
+
+		se (num % 2 == 0)
+			par++
+	escreva("A quantidade de números pares é ", par)
+FIM
+
+
+6) Ler um número N e mostrar a tabuada de N de 1 até 10.
+VARIÁVEIS
+	int num, i, mult
+INÍCIO
+	escreva("Digite um número: ")
+	leia(num)
+	
+	para (i = 0; i < 10; i++)
+		mult = num * (i + 1)
+		escreva(num, " x ", i + 1, " = ", mult)
+FIM
+
+
+7) Ler 5 números e calcular a soma apenas dos números positivos.
+VARIÁVEIS
+	int num, soma = 0, i
+INÍCIO
+	para (i = 0; i < 5; i++)
+		escreva("Digite um número: ")
+		leia(num)
+
+		se (num > 0)
+			soma += num
+	escreva(soma)
+FIM
+
+
+8) Ler 8 idades e informar quantas são maiores ou iguais a 18.
+VARIÁVEIS
+	int idade, i, maior = 0
+INÍCIO
+	para (i = 0; i < 8; i++)
+		escreva("Digite uma idade: ")
+		leia(idade)
+
+		se (idade >= 18)
+			maior++
+	escreva("A quantidade de pessoas maiores de 18 são: ", maior)
+FIM
+
+
+9) Ler um valor inteiro N e calcular o fatorial de N (considere N ≥ 0).
+VARIÁVEIS
+	int num, i, fatorial
+INÍCIO
+	escreva("Digite um número: ")
+	leia(num)
+
+	para (i = num; i > 0; i--)
+		fatorial = num * (i - 1)
+		num--
+	escreva(fatorial)
+FIM
+
+
+10) Criar um algoritmo que leia números até que o usuário digite 0. Ao final, mostrar a soma de todos os
+números digitados (sem incluir o 0).
+VARIÁVEIS
+	int num, soma = 0
+INÍCIO
+	faça {
+		escreva("Digite um número: ")
+		leia(num)
+
+		soma += num
+	} enquanto (num != 0)
+	
+	escreva("A soma é ", soma)
+FIM
