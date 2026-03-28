@@ -113,8 +113,46 @@ header {
     background-color: #8C4F3D;
 }
 
+footer {
+    padding: 15px;
+    height: 100px;
+    background-color: #8C4F3D;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+footer div {
+    background-color: #8C4F3D;
+}
+
+footer p {
+    background-color: #8C4F3D;
+    color: #F8CCAA;
+}
+
+.img_footer {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    background-color: #8C4F3D;
+}
+
+.img_footer img {
+    width: 35px;
+    background-color: #8C4F3D;
+}
+
+.img_footer a {
+    background-color: #8C4F3D;
+}
+
 main {
     margin: 50px 0;
+    min-height: 60vh;
 }
 
 section {
@@ -206,12 +244,11 @@ section {
 .div_atividades {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 8%;
 }
 
 .div_bloco {
     width: 300px;
-    margin: 0 50px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -224,7 +261,7 @@ section {
 .fotos_div {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 20px;
 }
 
 .fotos_div img {
@@ -243,8 +280,8 @@ section {
 
 .div_viagem {
     margin: 30px;
-    padding: 15px;
-    width: 1300px;
+    padding: 15px 0;
+    width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -312,3 +349,10 @@ th, td {
     border-bottom: 1px solid #8C4F3D;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
