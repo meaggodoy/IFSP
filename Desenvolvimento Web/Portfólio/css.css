@@ -40,6 +40,10 @@
     font-family: 'Rosie';
 }
 
+* h3 {
+    font-family: 'Rosie';
+}
+
 * h4 {
     font-family: 'Rosie';
 }
@@ -50,6 +54,11 @@
 }
 
 * a {
+    font-family: 'Athena';
+    font-weight: 100;
+}
+
+* li {
     font-family: 'Athena';
     font-weight: 100;
 }
@@ -309,8 +318,9 @@ section {
 
 .cardapio {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cardapio_section {
@@ -355,4 +365,42 @@ th, td {
     align-items: center;
     justify-content: center;
     padding: 50px;
+}
+
+.receita {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.receita_section {
+    width: 400px;
+    height: fit-content;
+    background-color: #8C4F3D;
+    border-radius: 20px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.receita_section h1, h3, ol, li {
+    background-color: #8C4F3D;
+    color: #F8CCAA;
+}
+
+.receita_section p {
+    background-color: #8C4F3D;
+    color: #F8CCAA;
+}
+
+.div_receita p {
+    background-color: #8C4F3D;
+    color: #F8CCAA;
+}
+
+.div_receita {
+    background-color: #8C4F3D;
+    padding: 10px;
 }
