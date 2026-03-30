@@ -183,6 +183,11 @@ section {
     justify-content: center;
 }
 
+.secoes h2 {
+    background-color: #E2BCAD;
+    color:#2D2926;
+}
+
 .secoes_div {
     padding: 100px 50px;
     width: 900px;
@@ -250,6 +255,11 @@ section {
     border-radius: 15px;
 }
 
+.secao_atividades h2 {
+    background-color: #E2BCAD;
+    color:#2D2926;
+}
+
 .div_atividades {
     display: flex;
     flex-direction: row;
@@ -299,6 +309,11 @@ section {
     border-radius: 15px;
 }
 
+.div_viagem h2 {
+    background-color: #E2BCAD;
+    color:#2D2926;
+}
+
 .img_galeria {
     width: 500px;
     height: 400px;
@@ -316,6 +331,12 @@ section {
     gap: 40px;
 }
 
+.github_div img {
+    width: 600px;
+    border: #8C4F3D solid 2px;
+    border-radius: 20px;
+}
+
 .cardapio {
     display: flex;
     flex-direction: column;
@@ -325,26 +346,47 @@ section {
 
 .cardapio_section {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8C4F3D;
+    width: 100%;
+    height: 400px;
+}
+
+.cardapio_section_div {
+    display: flex;
     flex-direction: row;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #8C4F3D;
 }
 
 .cardapio_div {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     height: 150px;
     padding: 20px;
-    border: 2px solid #8C4F3D;
-    border-radius: 15px;
-}
-
-.cardapio_div h2 {
-    border-bottom: #8C4F3D solid 1.5px;
+    background-color: #8C4F3D;
 }
 
 .cardapio_div ul {
     padding: 0 30px;
     font-family: 'Athena';
     font-weight: 100;
+    background-color: #8C4F3D;
+    color: #F8CCAA;
+}
+
+.cardapio_section h1 {
+    background-color: #8C4F3D;
+    color: #F8CCAA;
+}
+
+.cardapio_div li, h2 {
+    background-color: #8C4F3D;
+    color: #F8CCAA;
 }
 
 .tabela {
@@ -367,7 +409,14 @@ th, td {
     padding: 50px;
 }
 
-.receita {
+#receita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.receitas_sec {
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -385,7 +434,7 @@ th, td {
     gap: 15px;
 }
 
-.receita_section h1, h3, ol, li {
+.receita_section h1, h3 {
     background-color: #8C4F3D;
     color: #F8CCAA;
 }
@@ -400,7 +449,25 @@ th, td {
     color: #F8CCAA;
 }
 
+.div_receita li, ol {
+    background-color: #8C4F3D;
+    color: #F8CCAA;
+}
+
 .div_receita {
     background-color: #8C4F3D;
     padding: 10px;
+}
+
+.section_tabela {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.section_tabela h2 {
+    background-color: #E2BCAD;
+    color:#2D2926;
 }
