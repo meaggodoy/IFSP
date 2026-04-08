@@ -7,14 +7,12 @@ int main()
     
     for (i = 0; i < 8; i++) {
         printf("Digite M para masculino ou F para feminino: ");
-        scanf("%c", &sexo);
+        scanf(" %c", &sexo);
         
         if (sexo == 'M') {
             masculino++;
         } else if (sexo == 'F') {
             feminino++;
-        } else {
-            printf("Opcao invalida");
         }
     }
     
