@@ -65,10 +65,23 @@ int main()
                     printf("\nNessa opcao voce pode inserir duas notas que lhe sera retornado a media entre elas e a situacao (aprovado ou reprovado).");
                     printf("\nAprovado: nota maior ou equivalente a 6 | Reprovado: nota inferior a 6\n");
                     
-                    printf("Digite a primeira nota: ");
-                    scanf("%f", &nota1);
-                    printf("Digite a segunda nota: ");
-                    scanf("%f", &nota2);
+                    do {
+                        printf("Digite a primeira nota: ");
+                        scanf("%f", &nota1);
+                        
+                        if (nota1 < 0 || nota1 > 10) {
+                            printf("Nota invalida, digite novamente.\n");
+                        }
+                    } while (nota1 < 0 || nota1 > 10);
+                    
+                    do {
+                        printf("Digite a segunda nota: ");
+                        scanf("%f", &nota2);
+                        
+                        if (nota2 < 0 || nota2 > 10) {
+                            printf("Nota invalida, digite novamente.\n");
+                        }
+                    } while (nota2 < 0 || nota2 > 10);
                     
                     media = (nota1 + nota2) / 2;
                     printf("A media eh: %.2f", media);
@@ -79,7 +92,7 @@ int main()
                         printf("\nSituacao: Reprovado");
                     }
                     
-                    printf("\nDeseja validar um novo numero?\n1 - Sim\n2 - Nao ");
+                    printf("\nDeseja validar uma nova media?\n1 - Sim\n2 - Nao ");
 					scanf("%d", &caseMenu);
 					
 					if (caseMenu != 2 && caseMenu != 1) {
