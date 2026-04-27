@@ -61,22 +61,34 @@ int main()
                 break;
             case 2:
                 printf("Menu: Media e situacao");
-                printf("\nNessa opcao voce pode inserir duas notas que lhe sera retornado a media entre elas e a situacao (aprovado ou reprovado).");
-                printf("\nAprovado: nota maior ou equivalente a 6 | Reprovado: nota inferior a 6\n");
+                do {
+                    printf("\nNessa opcao voce pode inserir duas notas que lhe sera retornado a media entre elas e a situacao (aprovado ou reprovado).");
+                    printf("\nAprovado: nota maior ou equivalente a 6 | Reprovado: nota inferior a 6\n");
+                    
+                    printf("Digite a primeira nota: ");
+                    scanf("%f", &nota1);
+                    printf("Digite a segunda nota: ");
+                    scanf("%f", &nota2);
+                    
+                    media = (nota1 + nota2) / 2;
+                    printf("A media eh: %.2f", media);
+                    
+                    if (media >= 6) {
+                        printf("\nSituacao: Aprovado");
+                    } else {
+                        printf("\nSituacao: Reprovado");
+                    }
+                    
+                    printf("\nDeseja validar um novo numero?\n1 - Sim\n2 - Nao ");
+					scanf("%d", &caseMenu);
+					
+					if (caseMenu != 2 && caseMenu != 1) {
+						printf("Opcao invalida, digite novamente.");
+					} else if (caseMenu == 2) {
+						printf("Saindo..");
+					}
+                } while(caseMenu != 2);
                 
-                printf("Digite a primeira nota: ");
-                scanf("%f", &nota1);
-                printf("Digite a segunda nota: ");
-                scanf("%f", &nota2);
-                
-                media = (nota1 + nota2) / 2;
-                printf("A media eh: %.2f", media);
-                
-                if (media >= 6) {
-                    printf("\nSituacao: Aprovado");
-                } else {
-                    printf("\nSituacao: Reprovado");
-                }
                 break;
             case 3:
                 printf("Menu: Par ou Impar e sinal\n");
