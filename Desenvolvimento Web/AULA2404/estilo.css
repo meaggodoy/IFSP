@@ -17,6 +17,10 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 7px;
+
+    a {
+        color: #4A342A;
+    }
 }
 
 .img_footer {
@@ -38,6 +42,10 @@ footer {
             filter: invert(85%);
         }
     }
+
+    a {
+        color: #F5F1EA;
+    }
 }
 
 main {
@@ -51,6 +59,43 @@ main {
     align-items: center;
 
     color: #4A342A;
+
+    div {
+        margin: 10px;
+        padding: 10px;
+
+        width: 60vw;
+        border: #4A342A 1.5px solid;
+        border-radius: 5px;
+
+        button {
+            width: 100px;
+            height: 30px;
+            background-color: #B2967D;
+            color: #4A342A;
+
+            text-align: center;
+            border: none;
+            border-radius: 20px;
+        }
+
+        input {
+            padding: 3px;
+            height: 30px;
+            background-color: #D7C9B8;
+            border: none;
+            border-radius: 5px;
+            color: #4A342A;
+        }
+
+        input::placeholder {
+            color: #4A342A;
+        }
+
+        #pai_ex08 {
+            width: 40vw;
+        }
+    }
 }
 
 .botao {

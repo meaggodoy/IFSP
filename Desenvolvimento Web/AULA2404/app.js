@@ -17,8 +17,18 @@ const btn_tema = document.querySelector('#tema');
 const tema_escuro = document.querySelector('#main');
 const tema_escuro_footer = document.querySelector('#footer');
 
+if (document.cookie.includes("tema=escuro")) {
+    document.body.classList.add("modo-escuro");
+}
+
 btn_tema.onclick = function(event) {
     event.preventDefault();
     tema_escuro.classList.toggle("modo_escuro");
     tema_escuro_footer.classList.toggle("modo_escuro_footer");
+
+    if (document.body.classList.contains("modo_escuro")) {
+        document.cookie = "tema=escuro; path=/";
+    } else {
+        document.cookie = "tema=claro; path=/";
+    }
 }
