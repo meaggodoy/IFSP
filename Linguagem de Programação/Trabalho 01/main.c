@@ -1,22 +1,36 @@
 #include <stdio.h>
 
-int main()
-{
-    int menu, num, i, resultado = 0, caseMenu;
-    float nota1, nota2, media = 0, calculadora, x, y;
-    char operador;
-    
-    printf("Seja bem-vindo a nossa aplicacao: CalcMe.\nUm ambiente ha algumas operacoes basicas da matematica.\nFaca bom uso!");
+int perguntarRepetir() {
+    char resposta;
     
     do {
-        printf("\n===== MENU DE UTILIDADES =====");
+	    printf("\nDeseja realizar o processo novamente? (S/N): ");
+	    scanf(" %c", &resposta);
+	    
+	    if (resposta == 'S') {
+	        return 1; 
+	    } else if (resposta == 'N') {
+	        return 0;
+	    } else {
+	    	printf("Opcao invalida.");
+		}
+	} while (resposta != 'S' || resposta != 'N');
+}
+
+int main() {
+	int menu, funcaoPergunta = 1, num, i, num_soma, soma;
+	char operador;
+    float x, y, calculadora, nota1, nota2, media, num_tabuada, tabuada;
+					
+	do {
+		printf("\n===== MENU DE UTILIDADES =====");
         printf("\n1 - Calculadora\n2 - Media e situacao\n3 - Par ou impar e sinal\n4 - Tabuada\n5 - Soma ate zero (0)\n0 - Sair");
         printf("\nEscolha sua opcao: ");
         scanf("%d", &menu);
         
         switch (menu) {
-            case 1:
-                printf("Menu: Calculadora");
+        	case 1:
+        		printf("Menu: Calculadora");
                 do {
                 	printf("\nMenu\n'+' Soma\n'-' Subtracao\n'*' Multiplicacao\n'/' Divisao\n'0' - Sair\nDigite um operador: ");
 					scanf(" %c", &operador);
@@ -47,24 +61,31 @@ int main()
 							printf("Digite dois numeros: ");
 							scanf("%f %f", &x, &y);
 							
-							calculadora = x / y;
-							printf("A divisao eh %.2f", calculadora);
+							if (y == 0) {
+								printf("Divisao por 0.");
+							} else {
+								calculadora = x / y;
+								printf("A divisao eh %.2f", calculadora);	
+							}
 							break;
 						case '0':
 							printf("Saindo..");
 							break;
 						default:
 							printf("Opcao invalida");
+							operador = 'A';
 					}
-				} while (operador != '0');
-				
-                break;
-            case 2:
-                printf("Menu: Media e situacao");
-                do {
-                    printf("\nNessa opcao voce pode inserir duas notas que lhe sera retornado a media entre elas e a situacao (aprovado ou reprovado).");
-                    printf("\nAprovado: nota maior ou equivalente a 6 | Reprovado: nota inferior a 6\n");
-                    
+					
+					if (operador != '0' && operador != 'A') {
+						funcaoPergunta = perguntarRepetir();	
+					}
+				} while (funcaoPergunta != 0 && operador != '0');
+        		break;
+        	case 2:
+        		printf("Menu: Media e situacao");
+        		printf("\nNessa opcao voce pode inserir duas notas que lhe sera retornado a media entre elas e a situacao (aprovado ou reprovado).");
+                printf("\nAprovado: nota maior ou equivalente a 6 | Reprovado: nota inferior a 6\n");
+        		do {
                     do {
                         printf("Digite a primeira nota: ");
                         scanf("%f", &nota1);
@@ -92,23 +113,15 @@ int main()
                         printf("\nSituacao: Reprovado");
                     }
                     
-                    printf("\nDeseja validar uma nova media?\n1 - Sim\n2 - Nao ");
-					scanf("%d", &caseMenu);
-					
-					if (caseMenu != 2 && caseMenu != 1) {
-						printf("Opcao invalida, digite novamente.");
-					} else if (caseMenu == 2) {
-						printf("Saindo..");
-					}
-                } while(caseMenu != 2);
-                
-                break;
-            case 3:
-                printf("Menu: Par ou Impar e sinal\n");
+                    funcaoPergunta = perguntarRepetir();	
+                    
+				} while (funcaoPergunta != 0);
+        		break;
+        	case 3:
+        		printf("Menu: Par ou Impar e sinal\n");
+        		printf("Nessa opcao voce pode inserir o numero inteiro que lhe sera retornado se ele eh par ou impar e positivo ou negativo.\n");
                 
                 do {
-                	printf("Nessa opcao voce pode inserir o numero inteiro que lhe sera retornado se ele eh par ou impar e positivo ou negativo.\n");
-                
 	                printf("Digite um numero: ");
 	                scanf("%d", &num);
 	                
@@ -128,72 +141,54 @@ int main()
 						printf("O numero eh ZERO.");
 					}
 					
-					printf("\nDeseja validar um novo numero?\n1 - Sim\n2 - Nao ");
-					scanf("%d", &caseMenu);
-					
-					if (caseMenu != 2 && caseMenu != 1) {
-						printf("Opcao invalida, digite novamente.");
-					} else if (caseMenu == 2) {
-						printf("Saindo..");
-					}
-				} while (caseMenu != 2);
-                
-                break;
-            case 4:
-                printf("Menu: Tabuada");
-                
-                do {
-                	printf("\nDigite um numero: ");
-	                scanf("%d", &num);
+					funcaoPergunta = perguntarRepetir();	
+                    
+				} while (funcaoPergunta != 0);
+        		break;
+        	case 4:
+        		printf("Menu: Tabuada");
+        		
+        		do {
+	                printf("\nDigite um numero: ");
+	                scanf("%f", &num_tabuada);
 	                
 	                for (i = 1; i <= 10; i++) {
-	                	resultado  = num * i;
-	                	printf("%d x %d = %d\n", num, i, resultado);
+	                	tabuada  = num_tabuada * i;
+	                	printf("%.2f x %d = %.2f\n", num_tabuada, i, tabuada);
 					}
 					
-					printf("\nDeseja testar um novo numero?\n1 - Sim\n2 - Nao ");
-					scanf("%d", &caseMenu);
-					
-					if (caseMenu != 2 && caseMenu != 1) {
-						printf("Opcao invalida, digite novamente.");
-					} else if (caseMenu == 2) {
-						printf("Saindo..");
-					}
-				} while (caseMenu != 2);
-                
-                break;
-            case 5:
-                printf("Menu: Soma ate zero.\n");
+					funcaoPergunta = perguntarRepetir();	
+                    
+				} while (funcaoPergunta != 0);
+        		break;
+        	case 5:
+        		printf("Menu: Soma ate zero.\n");
                 
                 do {
+                	soma = 0;
+                	
 	                do {
 	                	printf("Digite um numero: ");
-	                	scanf("%d", &num);
+	                	scanf("%d", &num_soma);
 	                	
-	                	if (num != 0) {
-	                		resultado += num;
+	                	if (num_soma != 0) {
+	                		soma += num_soma;
 						}
-					} while (num != 0);
+					} while (num_soma != 0);
 					
-					printf("A soma final eh %d", resultado);
-					printf("\nDeseja somar novos numeros?\n1 - Sim\n2 - Nao ");
-					scanf("%d", &caseMenu);
+					printf("A soma final eh %d", soma);
 					
-					if (caseMenu != 2 && caseMenu != 1) {
-						printf("Opcao invalida, digite novamente.");
-					} else if (caseMenu == 2) {
-						printf("Saindo..");
-					}
-				} while (caseMenu != 2);
-				
-                break;
-            case 0:
-                printf("Agradecemos por ter usado nossa aplicacao! Nos vemos em breve.");
-                break;
-            default:
-                printf("Opcao invalida. Digite novamente.");
-        }
-    } while (menu != 0);
-    
-    return 0;
+					funcaoPergunta = perguntarRepetir();
+					
+				} while (funcaoPergunta != 0);
+        		break;
+        	case 0:
+        		printf("Saida");
+        		break;
+        	default:
+        		printf("Opcao invalida.");
+		}
+	} while (menu != 0);
+	
+	return 0;
 }
