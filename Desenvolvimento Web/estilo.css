@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    font-family: 'Poppins';
+    color: #0c112c;
+}
+
+.main_mensagem {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #3E4B8E;
+    background: radial-gradient(circle, rgba(62, 75, 142, 1) 0%, rgba(166, 188, 201, 1) 100%);
+}
+
+.div_mensagem {
+    width: 30vw;
+    height: 50vh;
+    padding: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    border: solid 2px #a0a4bb;
+    border-radius: 20px;
+    background-color: #a0a4bb59;
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+
+.btn_mensagem {
+    width: 100%;
+    height: 7vh;
+    border-radius: 25px;
+    border: none;
+    background-color: #c4c8df;
+
+    font-size: 18px;
+    color: #0c112c;
+
+    transition: 0.4s;
+}
+
+.btn_mensagem:hover {
+    cursor: pointer;
+    font-weight: 600;
+
+    background-color: #273475;
+    
+    a {
+        color: #c4c8df;
+    }
+}
+
+footer {
+    max-width: 100%;
+    height: 25vh;
+    padding: 15px;
+
+    background-color: lightgray;
+
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 15px 10px;
+
+        div {
+            padding-right: 15px;
+            width: 12vw;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    section:first-of-type {
+        border-bottom: darkgrey solid 1.5px;
+    }
+}
