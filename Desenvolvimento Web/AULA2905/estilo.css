@@ -93,3 +93,139 @@ footer {
         border-bottom: darkgrey solid 1.5px;
     }
 }
+
+.suposta_img {
+    width: 100%;
+    height: 50%;
+    border: rgb(65, 65, 65) solid 2px;
+}
+
+.section_headline {
+    width: 100%;
+    height: 70vh;
+    background-color: gray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    text-align: center;
+
+    h1 {
+        font-size: 10vw;
+    }
+}
+
+.section_servicos {
+    width: 100%;
+    height: 65vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.article_servicos {
+    width: 90%;
+    height: 45vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 7px;
+    }
+}
+
+.section_sobre {
+    width: 100%;
+    height: 60vh;
+    background-color: gray;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .suposta_img {
+        width: 50%;
+        height: 100%;
+        background-color: white;
+    }
+
+    article {
+        width: 48%;
+    }
+}
+
+.section_contato {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        width: 50vw;
+        height: 40vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 768px) {
+    .responsividade {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section_headline {
+        height: 50vh;
+    }
+
+    .section_servicos {
+        height: 100vh;
+
+        .article_servicos {
+            height: 95vh;
+        }
+
+        .suposta_img {
+            height: 20vh;
+        }
+    }
+
+    .section_sobre {
+        height: 50vh;
+        justify-content: space-between;
+
+        article {
+            width: 80%;
+            margin-top: 10%;
+        }
+
+        .suposta_img {
+            width: 100%;
+            height: 50%;
+        }
+    }
+
+    .section_contato {
+        form {
+            width: 80%;
+        }
+    }
+}
