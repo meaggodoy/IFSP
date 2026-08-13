@@ -1,4 +1,4 @@
-public class Questao03{
+public class Questao03 {
 	public static void main(String[] args) {
 		int inteiro;
 		float flutuante = 15.0f;
