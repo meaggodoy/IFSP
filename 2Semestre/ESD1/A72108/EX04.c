@@ -26,7 +26,7 @@ int main()
     if (resultado == 1)
         printf("Primo");
     else
-        printf("Nao");
+        printf("Nao primo");
 
     return 0;
 }
