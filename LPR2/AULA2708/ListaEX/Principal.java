@@ -21,9 +21,14 @@ public class Principal {
         c.setEndereco("Monte Mor");
         c.setTelefone(999999999);
         c.setEmail("teste@teste.br");
+        
+        System.out.println("Nome: " + c.getNome());
         JOptionPane.showMessageDialog(null, "Nome: " + c.getNome());
+        System.out.println("Endereco: " + c.getEndereco());
         JOptionPane.showMessageDialog(null, "Endereco: " + c.getEndereco());
+        System.out.println("Telefone: " + c.getTelefone());
         JOptionPane.showMessageDialog(null, "Telefone: " + c.getTelefone());
+        System.out.println("Email: " + c.getEmail());
         JOptionPane.showMessageDialog(null, "Email: " + c.getEmail());
     }
 }
