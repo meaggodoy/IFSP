@@ -6,7 +6,7 @@ public class MedidorTemperatura {
     public void setTemperatura(float temperatura) {
         this.temperatura = temperatura;
     }
-    public void getTemperatura() {
+    public float getTemperatura() {
         return temperatura;
     }
 }
