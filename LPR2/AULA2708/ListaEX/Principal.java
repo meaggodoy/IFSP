@@ -13,6 +13,7 @@ public class Principal {
         m.mostraMensagem("amor fati");
         
         MedidorTemperatura mt = new MedidorTemperatura();
-        float temperatura = Float.parseFloat(JOptionPane.showInputDialog(null, "Digite a temperatura:"));
+        mt.setTemperatura(26.0f);
+        JOptionPane.showMessageDialog(null, "A temperatura armazenada foi: " + mt.getTemperatura());
     }
 }
