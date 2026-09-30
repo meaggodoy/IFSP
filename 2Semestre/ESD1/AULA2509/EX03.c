@@ -39,15 +39,18 @@ int verificarCheia(){
 }
 
 void push(Disco disco){
-    if (disco.diametro <= p.vetorDisco[p.topo].diametro){
-        if(!verificarCheia()) {
-    	    p.topo++;
-    		p.vetorDisco[p.topo] = disco;
-    	} else {
-    		printf("\nNao eh possivel inserir, pilha cheia.");
-    	}
+    if(!verificarCheia()) {
+        if (verificarVazia()) {
+            p.topo++;
+		    p.vetorDisco[p.topo] = disco;    
+        } else if (disco.diametro <= p.vetorDisco[p.topo].diametro) {
+            p.topo++;
+		    p.vetorDisco[p.topo] = disco;
+	    } else {
+		    printf("\nNao eh possivel adicionar um disco maior que o anterior.");
+	    }
     } else 
-        printf("\nNao eh possivel adicionar um disco maior que o anterior.");
+        printf("\nNao eh possivel inserir, pilha cheia.");
 }
 
 Disco pop(){
@@ -89,7 +92,6 @@ int main(int argc, char *argv[]) {
 		printf("\n4. Imprimir");
 		printf("\n5. Sair");
 		printf("\nDigite a opcao desejada: ");
-		
 		scanf("%d", &opcao);
 		
 		switch(opcao) {
@@ -122,6 +124,5 @@ int main(int argc, char *argv[]) {
 			default:
 				printf("\nOpcao invalida. Escolha um numero valido de opcao.");
 		}
-		
 	} while(opcao != 5);
 }
