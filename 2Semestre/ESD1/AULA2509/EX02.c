@@ -8,11 +8,12 @@ typedef struct _disco {
 } Disco;
 
 typedef struct pilha {
-	disco vetor[TAM_MAX];
+	Disco vetorDisco[TAM_MAX];
 	int topo;
 } Pilha;
 
 Pilha p;
+Disco disco;
 
 void push(Disco disco);
 Disco pop();
@@ -38,48 +39,37 @@ int verificarCheia(){
 }
 
 void push(Disco disco){
-	//verificar se a pilha nao estah cheia
 	if(!verificarCheia()) {
-		//atualiza o topo da pilha
-		p.topo++;
-		//insere o elemento no vetor na posi��o topo
-		p.vetor[p.topo] = numero;
+	    p.topo++;
+		p.vetorDisco[p.topo] = disco;
 	} else {
-		//se estiver cheia, informa o usu�rio
 		printf("\nNao eh possivel inserir, pilha cheia.");
 	}
 }
 
-int pop(){
-	//verificar se a pilha nao estah vazia
+Disco pop(){
 	if(!verificarVazia()) {
-		//define vari�vel uma variavel auxiliar
-		int aux;
-		//variavel auxiliar ira guardar o elemento do topo da pilha
-		aux = p.vetor[p.topo];
-		//atualiza o topo da pilha
-		p.topo--;
-		//retorna o numero removido
-		return aux;
+		Disco aux;
+        aux = p.vetorDisco[p.topo];
+        p.topo--;
+        return aux;
 	} else {
-		//se estiver vazia, informa o usu�rio
+	    Disco vazio = {"", 0, 0.0};
 		printf("\nA pilha estah vazia.");
-		return 0;
+		return vazio;
 	}
 }
 
 void imprimir(){
-	//verificar se a pilha n�o est� vazia
 	if(!verificarVazia()) {
-		//define uma vari�vel auxiliar
 		int i;
-		printf("\nOs elementos na pilha sao:");
-		//percorrer o vetor do topo ate a base
-		for(i = p.topo; i >= 0; i--)
-			//imprimir o elemento na posicao i
-			printf("\n%d", p.vetor[i]);
+        for(i = p.topo; i >= 0; i--) {
+            printf("\nDisco %d", i + 1);
+            printf("\nCor: %s", p.vetorDisco[i].cor);
+            printf("\nDiametro: %d cm", p.vetorDisco[i].diametro);
+            printf("\nPeso: %.2f", p.vetorDisco[i].peso);
+        }
 	} else {
-		//se estiver vazia, informa o usuario
 		printf("\nA pilha esta vazia.");
 	}
 }
@@ -89,7 +79,6 @@ int main(int argc, char *argv[]) {
 	inicializar();
 
 	do {
-		//exibir o menu
 		printf("\n    MENU");
 		printf("\n1. Inicializar");
 		printf("\n2. Inserir");
@@ -98,22 +87,28 @@ int main(int argc, char *argv[]) {
 		printf("\n5. Sair");
 		printf("\nDigite a opcao desejada: ");
 		
-		//ler a opcao desejada pelo usuario
 		scanf("%d", &opcao);
 		
-		//processar a funcionalidade
 		switch(opcao) {
 			case 1:
 				inicializar();
 				break;
 			case 2:
-				printf("Digite um numero: ");
-				scanf("%d", &temp);
-				push(temp);
+				printf("Digite a cor: ");
+                scanf("%s", disco.cor);
+                printf("Digite o diametro: ");
+                scanf("%d", &disco.diametro);
+                printf("Digite o peso: ");
+                scanf("%f", &disco.peso);
+				push(disco);
 				break;
 			case 3:
-				temp = pop();
-				printf("Numero removido: %d", temp);
+				disco = pop();
+				if(disco.diametro != 0) {
+				    printf("\nCor: %s", disco.cor);
+                    printf("\nDiametro: %d cm", disco.diametro);
+                    printf("\nPeso: %.2f", disco.peso);   
+				}
 				break;
 			case 4:
 				imprimir();
