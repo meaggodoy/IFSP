@@ -2,15 +2,6 @@
 #include <stdlib.h>
 #define TAM_MAX 10
 
-void inserir(Aluno aluno);
-void inicializar();
-int verificarVazia();
-int verificarCheia();
-void imprimir();
-Aluno remover();
-Aluno receberAluno(Aluno aluno);
-void imprimirAluno(Aluno aluno);
-
 typedef struct _Aluno {
     char nome[50];
     int turma;
@@ -21,6 +12,15 @@ typedef struct fila {
 	Aluno vetorAlunos[TAM_MAX];
 	int fim;
 } Fila;
+
+void inserir(Aluno aluno);
+void inicializar();
+int verificarVazia();
+int verificarCheia();
+void imprimir();
+Aluno remover();
+Aluno receberAluno(Aluno aluno);
+void imprimirAluno(Aluno aluno);
 
 Aluno aluno;
 Fila f;
@@ -90,6 +90,13 @@ void imprimirAluno(Aluno aluno) {
     printf("\nProntuario: %s", aluno.prontuario);
 }
 
+void mostrarRemovido(Aluno aluno) {
+	printf("\n---");
+    printf("\nAluno: %s", aluno.nome);
+    printf("\nTurma: %d", aluno.turma);
+    printf("\nProntuario: %s", aluno.prontuario);
+}
+
 int main(int argc, char *argv[]) {
 	int temp;
 	int opcao;
@@ -118,8 +125,8 @@ int main(int argc, char *argv[]) {
 				inserir(aluno);
 				break;
 			case 3:
-				temp = remover();
-				printf("\nNumero removido: %d", temp);
+				aluno = remover();
+				mostrarRemovido(aluno);
 				break;
 			case 4:
 				imprimir();
